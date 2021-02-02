@@ -2,7 +2,8 @@
 - name:        Test connection my node1
   hosts:       server_nginx
   become:      yes
-  remote_user: maxim
+  become_user: maxim
+  become_method : enable
 
   tasks:
   - name:      Ping my node
