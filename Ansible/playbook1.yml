@@ -1,8 +1,9 @@
 ---
-- name:   Test connection my node1
-  hosts:  server_nginx
-  become: yes
+- name:        Test connection my node1
+  hosts:       server_nginx
+  become:      yes
+  remote_user: maxim
 
   tasks:
-  - name: Ping my node
+  - name:      Ping my node
     ping:
