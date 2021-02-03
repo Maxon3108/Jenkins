@@ -5,7 +5,5 @@
   become_user: maxim
   become_method : enable
 
-
-
   roles:
     - install_nginx
