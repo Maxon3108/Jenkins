@@ -3,8 +3,9 @@
   hosts:       server_nginx
   become:      yes
   become_user: maxim
-  become_method : sudo
+  become_method : enable
   remote_user: maxim
+  sudo: yes
 
   roles:
     - install_nginx
