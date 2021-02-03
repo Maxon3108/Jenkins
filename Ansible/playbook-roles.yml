@@ -1,7 +1,8 @@
 ---
 - name:        Roles playbook - add roles and run
   hosts:       server_nginx
-  become:      yes
+  become:      true
+  become_user: maxim
   become_method : sudo
 
   roles:
