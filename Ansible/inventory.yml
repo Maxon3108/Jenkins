@@ -1,6 +1,7 @@
 [server_nginx]
    192.168.56.105
 [server_nginx:vars]
+   ansible_connection           = ssh
    ansible_ssh_user             = maxim
    ansible_ssh_private_key_file = /home/maxim/.ssh/id_rsa
 
