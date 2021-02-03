@@ -3,8 +3,8 @@
 - name: ensure nginx is at the latest version
   apt:
     update_cache: yes
-    name = nginx
-    state = latest
+    name:  nginx
+    state: latest
 - name: start nginx
   service:
     name:  nginx
