@@ -3,7 +3,7 @@
   hosts:       server_nginx
   become:      yes
   become_user: maxim
-  become_method : enable
+  become_method : sudo
   remote_user: maxim
 
   roles:
