@@ -1,8 +1,8 @@
 ---
 # tasks file for install_nginx
 - name: ensure nginx is at the latest version
-    apt:  name=nginx state=latest
+  apt: name=nginx state=latest
 - name: start nginx
-    service:
-      name:  nginx
-      state: started
+  service:
+    name:  nginx
+    state: started
