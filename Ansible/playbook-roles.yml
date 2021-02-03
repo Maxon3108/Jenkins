@@ -5,7 +5,7 @@
   become_user: maxim
   become_method : enable
   remote_user: maxim
-  sudo: yes
+
 
   roles:
     - install_nginx
