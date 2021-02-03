@@ -5,7 +5,7 @@
     update_cache: true
     name:  nginx
     state: latest
- # become: yes
+  become: yes
 
 - name: start nginx
   service:
