@@ -5,9 +5,8 @@
     update_cache: true
     name:  nginx
     state: latest
-  become: true
-  become_user: maxim
-  become_method: sudo
+  become: yes
+
 - name: start nginx
   service:
     name:  nginx
