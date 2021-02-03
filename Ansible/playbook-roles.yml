@@ -4,6 +4,7 @@
   become:      yes
   become_user: maxim
   become_method : enable
+  remote_user: maxim
 
   roles:
     - install_nginx
