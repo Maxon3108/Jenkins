@@ -6,4 +6,5 @@
   become_method : sudo
 
   roles:
-    - install_nginx
+#    - install_nginx
+     - config_nginx
