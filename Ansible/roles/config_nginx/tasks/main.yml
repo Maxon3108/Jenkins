@@ -1,7 +1,7 @@
 ---
 # tasks file for config_nginx
 - name: "create www directory for site1"
-    file:
+  file:
       path: /var/www/html/{{ domain }}1
       state: directory
       mode: '0775'
@@ -9,7 +9,7 @@
       group: "{{ user }}"
 
 - name: "create www directory for site2"
-    file:
+  file:
       path: /var/www/html/{{ domain }}2
       state: directory
       mode: '0775'
@@ -17,21 +17,21 @@
       group: "{{ user }}"
 
 - name: "copy index1.html"
-    template:
+  template:
       src: index1.html
       dest: //var/www/html/{{ domain }}1.html
       owner: "{{ user }}"
       group: "{{ user }}"
 
 - name: "copy index2.html"
-    template:
+  template:
       src: index2.html
       dest: //var/www/html/{{ domain }}2.html
       owner: "{{ user }}"
       group: "{{ user }}"
 
 - name: "copy nginx site1.conf"
-    template:
+  template:
       src: {{ domain }}1.conf
       dest: /etc/nginx/sites-available/{{ domain }}1.conf
       owner: root
@@ -39,7 +39,7 @@
       mode: '0644'
 
 - name: "copy nginx site2.conf"
-    template:
+  template:
       src: {{ domain }}2.conf
       dest: /etc/nginx/sites-available/{{ domain }}2.conf
       owner: root
@@ -47,18 +47,18 @@
       mode: '0644'
 
 - name: "create symlink for site1"
-    file:
+  file:
       src: /etc/nginx/sites-available/{{ domain }}1.conf
       dest: /etc/nginx/sites-enabled/{{ domain }}1.conf
       state: link
 
 - name: "create symlink for site2"
-    file:
+  file:
       src: /etc/nginx/sites-available/{{ domain }}2.conf
       dest: /etc/nginx/sites-enabled/{{ domain }}2.conf
       state: link
 
 - name: "nginx restart"
-    service:
+  service:
       name: nginx
       state: restarted
