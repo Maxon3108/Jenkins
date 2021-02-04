@@ -1,4 +1,4 @@
 ---
 # vars file for install_nginx
 domain: site
-user: www-data
+nginx_user: www-data

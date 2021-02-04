@@ -5,30 +5,30 @@
       path: "/var/www/html/{{ domain }}1"
       state: directory
       mode: '0775'
-      owner: "{{ user }}"
-      group: "{{ user }}"
+      owner: "{{ nginx_user }}"
+      group: "{{ nginx_user }}"
 
 - name: create www directory for site2
   file:
       path: "/var/www/html/{{ domain }}2"
       state: directory
       mode: '0775'
-      owner: "{{ user }}"
-      group: "{{ user }}"
+      owner: "{{ nginx_user }}"
+      group: "{{ nginx_user }}"
 
 - name: copy index1.html
   template:
       src: index1.html
       dest: "/var/www/html/{{ domain }}1.html"
-      owner: "{{ user }}"
-      group: "{{ user }}"
+      owner: "{{ nginx_user }}"
+      group: "{{ nginx_user }}"
 
 - name: copy index2.html
   template:
       src: index2.html
       dest: "/var/www/html/{{ domain }}2.html"
-      owner: "{{ user }}"
-      group: "{{ user }}"
+      owner: "{{ nginx_user }}"
+      group: "{{ nginx_user }}"
 
 - name: copy nginx site1.conf
   template:
