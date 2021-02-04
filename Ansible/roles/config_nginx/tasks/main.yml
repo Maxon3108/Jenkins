@@ -19,14 +19,14 @@
 - name: copy index1.html
   template:
       src: index1.html
-      dest: "/var/www/html/{{ domain }}1/{{ domain }}1.html"
+      dest: "/var/www/html/{{ domain }}1/index1.html"
       owner: "{{ nginx_user }}"
       group: "{{ nginx_user }}"
 
 - name: copy index2.html
   template:
       src: index2.html
-      dest: "/var/www/html/{{ domain }}2/{{ domain }}2.html"
+      dest: "/var/www/html/{{ domain }}2/index2.html"
       owner: "{{ nginx_user }}"
       group: "{{ nginx_user }}"
 
