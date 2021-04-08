@@ -11,11 +11,11 @@ def props = []
 @Field
 def newParams = []
 
-...
+
 
 setNewProps()
 
-...
+
 // Setup job properties
 void setNewProps() {
 
