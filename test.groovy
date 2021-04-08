@@ -1,3 +1,4 @@
+node('master') {
 def jobParam = []
 def listFile = readFile("test.txt").readLines()
 listFile.each {
@@ -7,3 +8,4 @@ listFile.each {
 properties([disableConcurrentBuilds(), parameters(jobParam)])
 
 println ('Ok')
+}
