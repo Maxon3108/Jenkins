@@ -1,7 +1,6 @@
 import groovy.transform.Field
 import org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SecureGroovyScript
 
-...
 
 @Field
 def repoApp = 'https://<Git repository URL of App>'
