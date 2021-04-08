@@ -1,23 +1,28 @@
 
-List category_list = ["\"Select:selected\"","\"Vegetables\"","\"Fruits\""]
+List category_list = ["\"Select:selected\"","\"Vegetables\"","\"Fruits\"","\"Snack\""]
 List fruits_list = ["\"Select:selected\"","\"apple\"","\"banana\"","\"mango\""]
 List vegetables_list = ["\"Select:selected\"","\"potato\"","\"tomato\"","\"broccoli\""]
+List snack_list = ["\"Select:selected\"", "\"11111\"", "\"22222\""]
 List default_item = ["\"Not Applicable\""]
 String categories = buildScript(category_list)
 String vegetables = buildScript(vegetables_list)
 String fruits = buildScript(fruits_list)
-String items = populateItems(default_item,vegetables_list,fruits_list)
+String snack = buildScript(snack_list)
+String items = populateItems(default_item,vegetables_list,fruits_list, snack_list)
 // Methods to build groovy scripts to populate data
 String buildScript(List values){
   return "return $values"
 }
-String populateItems(List default_item, List vegetablesList, List fruitsList){
+String populateItems(List default_item, List vegetablesList, List fruitsList, List snackList){
 return """if(Categories.equals('Vegetables')){
      return $vegetablesList
      }
      else if(Categories.equals('Fruits')){
      return $fruitsList
-     }else{
+     } else if(Categories.equlas('Snack')){
+     return $snackList
+     }
+     else{
      return $default_item
      }
      """
