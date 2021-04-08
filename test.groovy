@@ -7,7 +7,7 @@ println (test)
 def getList() {
         // create blank array/list to hold choice options for this parameter and also define any other variables.
         def list = []
-        sh "wget https://raw.githubusercontent.com/Maxon3108/Jenkins/master/test.txt | timeout 5"
+        sh "wget https://raw.githubusercontent.com/Maxon3108/Jenkins/master/test.txt | timeout 5s"
 
         // create a file handle named as textfile 
         File textfile= new File("test.txt") 
