@@ -1,3 +1,4 @@
+node('master') {
 def getList() {
 // create blank array/list to hold choice options for this parameter and also define any other variables.
 def list = []
@@ -19,4 +20,4 @@ return list
 }
 def test = getList()
 println (test)
-
+}
