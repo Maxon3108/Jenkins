@@ -1,6 +1,10 @@
 node('master') {
         cleanWs()
-        def getList() {
+        
+def test = getList()
+println (test)
+}
+def getList() {
         // create blank array/list to hold choice options for this parameter and also define any other variables.
         def list = []
         sh "wget https://raw.githubusercontent.com/Maxon3108/Jenkins/master/test.txt"
@@ -19,6 +23,3 @@ node('master') {
         //Just fyi - return will work here, print/println will not work inside active choice groovy script / scriptler script for giving mychoice parameter the available options.
         return list
         }
-def test = getList()
-println (test)
-}
