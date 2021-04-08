@@ -19,7 +19,7 @@ return """if(Categories.equals('Vegetables')){
      }
      else if(Categories.equals('Fruits')){
      return $fruitsList
-     } else if(Categories.equlas('Snack')){
+     } else if(Categories.equals('Snack')){
      return $snackList
      }
      else{
