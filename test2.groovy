@@ -36,14 +36,15 @@ properties([
 [$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT',name: 'Items', referencedParameters: 'Categories', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, script: items]]]
     ])
 ])
-print "$Categories"
-print "$Items"
+
 pipeline {
     agent any
 stages {
    stage('Build'){
     steps {
        echo 'Building..'
+       echo "$Categories"
+       echo "$Items"
       }
     }
    }
