@@ -46,7 +46,7 @@ stages {
        echo "$Categories"
        echo "$Items"
        echo "$items"
-       echo "$values"
+       echo "$populateItems"
       }
     }
    }
