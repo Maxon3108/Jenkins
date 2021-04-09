@@ -43,8 +43,8 @@ stages {
    stage('Build'){
     steps {
        echo 'Building..'
-       echo "$categories"
-       echo "$items"
+       echo "$Categories"
+       echo "$Items"
       }
     }
    }
