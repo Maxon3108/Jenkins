@@ -44,7 +44,7 @@ stages {
     steps {
        echo 'Building..'
        echo "$Categories"
-       echo "$Items"
+       echo "$param.Items"
        echo "$items"
        echo "$populateItems"
       }
