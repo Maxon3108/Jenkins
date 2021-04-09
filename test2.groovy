@@ -45,6 +45,8 @@ stages {
        echo 'Building..'
        echo "$Categories"
        echo "$Items"
+       echo "$items"
+       echo "$values"
       }
     }
    }
