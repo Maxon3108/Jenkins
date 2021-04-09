@@ -1,6 +1,6 @@
 
 List category_list = ["\"Select:selected\"","\"Vegetables\"","\"Fruits\"","\"Snack\""]
-List fruits_list = ["\"Select:selected\"","\"apple\"","\"banana\"","\"mango\""]
+List fruits_list = ["\"Select:selected\"","\"apple\"","\"banana\"","\"mango\"","\"pinapple\""]
 List vegetables_list = ["\"Select:selected\"","\"potato\"","\"tomato\"","\"broccoli\""]
 List snack_list = ["\"Select:selected\"", "\"11111\"", "\"22222\"", "\"33333\"", "\"44444\""]
 List default_item = ["\"Not Applicable\""]
