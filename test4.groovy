@@ -16,16 +16,14 @@ def jobParameters = []
 def listServer = []
 def listDB = []    
 
-def getServers(list){
     list.each {   
         listServer.add(it.key)
     }
-    return listServer
     /*def playbookListFile = readFile("test.txt").readLines()
     playbookListFile.each {
       listServer.add(it)
     }*/
-}
+
 
 def getDB(String Servers, list) {
     list[$Servers].each {   
