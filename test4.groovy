@@ -1,4 +1,4 @@
-node('masterLin') {
+node() {
 def jobParameters = []
 def playbookListFile = readFile("test.txt").readlines()
 playbookListFile.each {
