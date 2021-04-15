@@ -11,7 +11,6 @@ stages {
     }
    }
  }
-node() {
 def list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'], 'Server2': ['DB2_1', 'DB2_2', 'DB2_3']]
 def jobParameters = []
 def listServer = []
@@ -38,6 +37,8 @@ jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   
             script:  getServers()]]])
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
             script: getDB($Servers)]]])
+node() {
+
 properties([
     parameters(jobParameters)
 ])
