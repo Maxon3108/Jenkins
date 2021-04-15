@@ -6,9 +6,9 @@ playbookListFile.each {
 }
 properties([parameters(jobParameters)])
 }
-pipeline {
-    agent any
-stages {
+//pipeline {
+//    agent any
+//stages {
   stage('Load groovy'){
     load('test4.groovy')
   }
@@ -21,5 +21,5 @@ stages {
        echo "$populateItems"
       }
     }
-   }
-}
+//   }
+// }
