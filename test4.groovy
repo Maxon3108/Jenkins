@@ -32,7 +32,7 @@ def getDB(String Servers, list) {
     }
     return listDB
 }
-if(binding.hasVariable($Servers)) {
+if(binding.hasVariable('$Servers')) {
 listDB = getDB($Servers)
 } else {
     listDB = getDB('Select:selected')
