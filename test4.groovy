@@ -15,7 +15,7 @@ def list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'],
 def jobParameters = []
 def listServer = []
 def listDB = []    
-
+def getServers(list) {
     list.each {   
         listServer.add(it.key)
     }
@@ -23,8 +23,10 @@ def listDB = []
     playbookListFile.each {
       listServer.add(it)
     }*/
+    return listServer
+}
 jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
-            script:  listServer]]])
+            script:  getServers()]]])
 
 /*def getDB(String Servers, list) {
     list[$Servers].each {   
