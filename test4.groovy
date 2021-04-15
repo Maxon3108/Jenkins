@@ -10,7 +10,7 @@ properties([parameters(jobParameters)])
 //    agent any
 //stages {
   stage('Load groovy'){
-    load('test4.groovy')
+    load('test.txt')
   }
    stage('Build'){
     steps {
