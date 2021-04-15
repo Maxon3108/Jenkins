@@ -1,5 +1,5 @@
 
-pipeline {
+//pipeline {
 //    agent any
 //stages {
 
@@ -10,7 +10,7 @@ pipeline {
       }
     }
 //   }
- }
+// }
 node() {
 def jobParameters = []
 def playbookListFile = readFile("test.txt").readlines()
