@@ -13,9 +13,9 @@ stages {
  }
 def list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'], 'Server2': ['DB2_1', 'DB2_2', 'DB2_3']]
 def jobParameters = []
-def listServer = []
 def listDB = []    
-def getServers(list, listServer) {
+def getServers(list) {
+    def listServer = []
     list.each {   
         listServer.add(it.key)
     }
@@ -25,9 +25,9 @@ def getServers(list, listServer) {
     }*/
     return listServer
 }
-listServer = getServers(list)
+def lServer = getServers()
 jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
-            script:  listServer]]])
+            script:  lServer]]])
 
 /*def getDB(String Servers, list) {
     list[$Servers].each {   
