@@ -5,6 +5,7 @@ playbookListFile.each {
   jobParameters.add(choice(choices: it, description: '', name: 'Choice'))
 }
 properties([parameters(jobParameters)])
+}
 pipeline {
     agent any
 stages {
@@ -18,5 +19,4 @@ stages {
       }
     }
    }
-}
 }
