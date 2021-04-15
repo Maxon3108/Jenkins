@@ -15,7 +15,7 @@ def list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'],
 def jobParameters = []
 def listServer = []
 def listDB = []    
-def getServers(list) {
+def getServers(List list) {
     list.each {   
         listServer.add(it.key)
     }
@@ -25,7 +25,7 @@ def getServers(list) {
     }*/
     return listServer
 }
-listServer = getServers()
+listServer = getServers(list)
 jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
             script:  listServer]]])
 
