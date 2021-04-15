@@ -1,3 +1,4 @@
+node() {
 def jobParameters = []
 def playbookListFile = readFile("test.txt").readlines()
 playbookListFile.each {
@@ -17,4 +18,5 @@ stages {
       }
     }
    }
+}
 }
