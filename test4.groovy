@@ -1,3 +1,16 @@
+
+pipeline {
+//    agent any
+//stages {
+
+   stage('Build'){
+    steps {
+       echo 'Building..'
+       
+      }
+    }
+//   }
+ }
 node() {
 def jobParameters = []
 def playbookListFile = readFile("test.txt").readlines()
@@ -6,18 +19,3 @@ playbookListFile.each {
 }
 properties([parameters(jobParameters)])
 }
-//pipeline {
-//    agent any
-//stages {
-
-   stage('Build'){
-    steps {
-       echo 'Building..'
-       echo "$Categories"
-       echo "$param.Items"
-       echo "$items"
-       echo "$populateItems"
-      }
-    }
-//   }
-// }
