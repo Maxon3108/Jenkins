@@ -1,7 +1,7 @@
 def jobParameters = []
 def playbookListFile = readFile("test.txt").readlines()
 playbookListFile.each {
-  jobParameters.add(choice(choices: it, description: ''))
+  jobParameters.add(choice(choices: it, description: '', name: 'Choice'))
 }
 properties([parameters(jobParameters)])
 pipeline {
