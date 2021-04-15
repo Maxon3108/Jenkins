@@ -9,6 +9,9 @@ properties([parameters(jobParameters)])
 pipeline {
     agent any
 stages {
+  stage('Load groovy'){
+    load('test4.groovy')
+  }
    stage('Build'){
     steps {
        echo 'Building..'
