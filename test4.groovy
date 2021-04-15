@@ -23,7 +23,8 @@ def listDB = []
     playbookListFile.each {
       listServer.add(it)
     }*/
-
+jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
+            script:  listServer]]])
 
 def getDB(String Servers, list) {
     list[$Servers].each {   
@@ -31,10 +32,9 @@ def getDB(String Servers, list) {
     }
     return listDB
 }
-jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
-            script:  listServer]]])
+listDB = getDB($Servers)
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
-            script: getDB($Servers)]]])
+            script: listDB]]])
 node() {
 
 properties([
