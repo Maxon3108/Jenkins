@@ -27,7 +27,7 @@ def getServers(list) {
 }
 def listServer = getServers(list)
 jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
-            script:  lServer]]])
+            script:  listServer]]])
 
 /*def getDB(String Servers, list) {
     list[$Servers].each {   
