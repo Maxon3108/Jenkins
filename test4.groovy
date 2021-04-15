@@ -17,10 +17,10 @@ def listServer = []
 def listDB = []    
 
 def getServers(){
-    list.each {   
-        listServer.add(it.key)
+    $list.each {   
+        $listServer.add(it.key)
     }
-    return listServer
+    return $listServer
     /*def playbookListFile = readFile("test.txt").readLines()
     playbookListFile.each {
       listServer.add(it)
