@@ -1,4 +1,4 @@
-node() {
+node('masterLin') {
 def jobParameters = []
 def playbookListFile = readFile("test.txt").readlines()
 playbookListFile.each {
@@ -9,9 +9,7 @@ properties([parameters(jobParameters)])
 //pipeline {
 //    agent any
 //stages {
-  stage('Load groovy'){
-    load('test.txt')
-  }
+
    stage('Build'){
     steps {
        echo 'Building..'
