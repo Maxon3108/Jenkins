@@ -11,23 +11,23 @@ stages {
     }
    }
  }
-def list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'], 'Server2': ['DB2_1', 'DB2_2', 'DB2_3']]
+List list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'], 'Server2': ['DB2_1', 'DB2_2', 'DB2_3']]
 def jobParameters = []
 def listServer = []
 def listDB = []    
 
-def getServers(){
-    $list.each {   
-        $listServer.add(it.key)
+def getServers(List list){
+    list.each {   
+        listServer.add(it.key)
     }
-    return $listServer
+    return listServer
     /*def playbookListFile = readFile("test.txt").readLines()
     playbookListFile.each {
       listServer.add(it)
     }*/
 }
 
-def getDB(String Servers) {
+def getDB(String Servers, List list) {
     list[$Servers].each {   
         listDB.add(it)
     }
