@@ -13,10 +13,12 @@ stages {
  }
 node() {
 def jobParameters = []
+def listServer = []
 def playbookListFile = readFile("test.txt").readLines()
 playbookListFile.each {
-  jobParameters.add(choice(choices: it, description: '', name: 'Choice'))
+  listServer = it
 }
+    jobParameters.add(choice(choices: listServer, description: '', name: 'Choice'))
 properties([
     parameters(jobParameters)
 ])
