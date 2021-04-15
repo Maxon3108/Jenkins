@@ -16,7 +16,7 @@ def jobParameters = []
 def listServer = []
 def playbookListFile = readFile("test.txt").readLines()
 playbookListFile.each {
-  listServer = it
+  listServer.add(it)
 }
     jobParameters.add(choice(choices: listServer, description: '', name: 'Choice'))
 properties([
