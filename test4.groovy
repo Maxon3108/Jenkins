@@ -32,7 +32,11 @@ def getDB(String Servers, list) {
     }
     return listDB
 }
+if(binding.hasVariable($Servers)) {
 listDB = getDB($Servers)
+} else {
+    listDB = getDB('Select:selected')
+}
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'PT_SINGLE_SELECT',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
             script: listDB]]])
 node() {
