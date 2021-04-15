@@ -15,7 +15,7 @@ def list = ['Selecet:selected': 'Not Applicable', 'Server1': ['DB1_1', 'DB1_2'],
 def jobParameters = []
 def listServer = []
 def listDB = []    
-def getServers(List list) {
+def getServers(list, listServer) {
     list.each {   
         listServer.add(it.key)
     }
