@@ -23,7 +23,7 @@ def getServers(list) {
     playbookListFile.each {
       listServer.add(it)
     }*/
-    return listServer
+    return "return $listServer.values"
 }
 List listServer = getServers(list)
 jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
