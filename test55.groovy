@@ -20,6 +20,7 @@ node() {
 }
 def metaSend(List fpEnable) {
   stage('Curl') {
+    sh "ls -l"
     fpEnable.each {
       sh "cat meta/${it}/PD.json"
       sh "cat meta/${it}/BS.json"
