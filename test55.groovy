@@ -5,7 +5,7 @@ node() {
     jobP.add(booleanParam(defaultValue: false, name: it.key, description: 'it.value'))
   }
   properties([
-  disableConcurentBuilds(),
+//  disableConcurentBuilds(),
   parameters(jobP)
   ])
   def fpEnable = []
