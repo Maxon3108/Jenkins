@@ -20,6 +20,6 @@ node() {
 }
 def metaSend(fpEnable) {
   stage('Curl') {
-    print $fpEnable
+    print fpEnable
   }
 }
