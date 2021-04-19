@@ -18,7 +18,7 @@ node() {
   }
   metaSend(fpEnable as String)
 }
-def metaSend(String fpEnable []) {
+def metaSend(String fpEnable) {
   stage('Curl') {
     print 'Hello $fpEnable'
   }
