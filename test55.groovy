@@ -16,7 +16,7 @@ node() {
       print fpEnable
     }
   }
-  metaSend(List fpEnable)
+  metaSend(fpEnable)
 }
 def metaSend(List fpEnable) {
   stage('Curl') {
