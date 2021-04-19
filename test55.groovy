@@ -10,20 +10,19 @@ node() {
   ])
   def fpEnable = []
   params.each {
-  //  print params
+
     if(it.getValue() == true) {
       fpEnable.add(it.getKey())
-      print fpEnable
+
     }
   }
   metaSend(fpEnable)
 }
 def metaSend(List fpEnable) {
   stage('Curl') {
-//    sh "echo 'path/to/$fpEnable'"
     fpEnable.each {
       sh "echo 'path/to/$it'"
     }
-//    print fpEnable
+
   }
 }
