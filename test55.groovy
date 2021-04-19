@@ -21,8 +21,8 @@ node() {
 def metaSend(List fpEnable) {
   stage('Curl') {
     fpEnable.each {
-      sh "cat meta/{$it}/PD.json"
-      sh "cat meta/{$it}/BS.json"
+      sh "cat meta/${it}/PD.json"
+      sh "cat meta/${it}/BS.json"
     }
 
   }
