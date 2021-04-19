@@ -10,8 +10,10 @@ node() {
   ])
   def fpEnable = []
   params.each {
+    print params
     if(it.getValue() == true) {
       fpEnable.add(it.getKey())
+      print fpEnable
     }
   }
   metaSend(fpEnable as String)
