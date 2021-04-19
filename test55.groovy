@@ -10,7 +10,7 @@ node() {
   ])
   def fpEnable = []
   params.each {
-    print params
+  //  print params
     if(it.getValue() == true) {
       fpEnable.add(it.getKey())
       print fpEnable
