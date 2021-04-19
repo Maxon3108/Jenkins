@@ -20,10 +20,10 @@ node() {
 }
 def metaSend(List fpEnable) {
   stage('Curl') {
-    sh "echo 'path/to/$fpEnable'"
+//    sh "echo 'path/to/$fpEnable'"
     fpEnable.each {
       sh "echo 'path/to/$it'"
     }
-    print fpEnable
+//    print fpEnable
   }
 }
