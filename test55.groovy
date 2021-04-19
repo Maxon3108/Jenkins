@@ -2,7 +2,7 @@ node() {
   def fpList = ['Test1':'Тест1', 'AFL':'АФЛ', 'Test3':'Тест4', 'Test4':'Тест4']
   def jobP = []
   fpList.each {
-    jopP.add(booleanParam(defaultValue: false, name: $it.key, description: ''))
+    jopP.add(booleanParam(defaultValue: false, name: it, description: ''))
   }
   properties([
   disableConcurentBuilds(),
