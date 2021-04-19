@@ -16,13 +16,14 @@ node() {
       print fpEnable
     }
   }
-  metaSend(fpEnable)
+  metaSend(fpEnable as String[])
 }
-def metaSend(List fpEnable) {
+def metaSend(String fpEnable) {
   stage('Curl') {
-    fpEnable.each {
-      sh "echo 'path/to/$it'"
-    }
+    sh "echo 'path/to/$fpEnable'"
+//    fpEnable.each {
+//      sh "echo 'path/to/$it'"
+//    }
     print fpEnable
   }
 }
