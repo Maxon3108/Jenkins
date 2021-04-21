@@ -59,7 +59,7 @@ def htmlBuild(list) {
         """
         def dbOptions = ""
     getDBlist(Servers, list).each {
-        dbOptions += "<option style='font-style: italic' value='DB=${it.getKey()}'>${it}</option>"
+        dbOptions += "<option style='font-style: italic' value='DB=${it}'>${it}</option>"
     }
     html += """<p style="display: inline-block;">
         <select id="commit_id" size="1" name="value">
