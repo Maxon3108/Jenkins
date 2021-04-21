@@ -34,7 +34,11 @@ jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   
             script:  listS]]])
 
 def getDB(list) {
-    def htmlBuild(list) {
+    
+   return htmlBuild() 
+}
+
+def htmlBuild(list) {
     html = """
             <html>
             <head>
@@ -80,10 +84,6 @@ def getDB(list) {
         }
         return listDB
     }
-   return htmlBuild() 
-}
-
-
 
 def listDB = getDB(list)
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
