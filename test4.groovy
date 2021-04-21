@@ -87,7 +87,7 @@ def getDB(list) {
 
 def listDB = getDB(list)
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
-            script: listDB]]]
+            script: listDB]]])
 /*def getDB(String Servers, list) {
     list[$Servers].each {   
         listDB.add(it)
