@@ -38,6 +38,7 @@ def getDB(list) {
 }
 
 def htmlBuild(list) {
+    def list = list
     html = """
             <html>
             <head>
