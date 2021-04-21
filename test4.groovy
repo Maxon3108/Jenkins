@@ -38,7 +38,7 @@ def getDB(list) {
 }
 
 def htmlBuild(list) {
-    def list = list
+    def l1 - list
     html = """
             <html>
             <head>
@@ -59,7 +59,7 @@ def htmlBuild(list) {
             <body>
         """
         def dbOptions = ""
-    getDBlist(Servers, list).each {
+    getDBlist(Servers, l1).each {
         dbOptions += "<option style='font-style: italic' value='DB=${it}'>${it}</option>"
     }
     html += """<p style="display: inline-block;">
@@ -77,9 +77,9 @@ def htmlBuild(list) {
     return html
    }
     
-    def getDBlist(Servers, list) {
+    def getDBlist(Servers, l2) {
         def listDB = []
-        list["\"${Servers}\""].each {
+        l2["\"${Servers}\""].each {
             listDB.add(it)
         }
         return listDB
