@@ -57,7 +57,7 @@ def htmlBuild(list) {
             </head>
             <body>
         """
-        def commitOptions = ""
+        def dbOptions = ""
     getDBlist(Servers, list).each {
         dbOptions += "<option style='font-style: italic' value='DB=${it.getKey()}'>${it}</option>"
     }
