@@ -27,10 +27,67 @@ def getServers(List values) {
     
     return "return $values"
 }
+
+
 String listS = getServers(listServer)
 jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: true,
             script:  listS]]])
 
+def getDB(list) {
+    def htmlBuild(list) {
+    html = """
+            <html>
+            <head>
+            <meta charset="windows-1251">
+            <style type="text/css">
+            div.grayTable {
+            text-align: left;
+            border-collapse: collapse;
+            }
+            .divTable.grayTable .divTableCell, .divTable.grayTable .divTableHead {
+            padding: 0px 3px;
+            }
+            .divTable.grayTable .divTableBody .divTableCell {
+            font-size: 13px;
+            }
+            </style>
+            </head>
+            <body>
+        """
+        def commitOptions = ""
+    getDBlist(Servers, list).each {
+        dbOptions += "<option style='font-style: italic' value='DB=${it.getKey()}'>${it}</option>"
+    }
+    html += """<p style="display: inline-block;">
+        <select id="commit_id" size="1" name="value">
+            ${dbOptions}
+        </select></p></div>"""
+
+    html += """
+            </div>
+            </div>
+            </div>
+            </body>
+            </html>
+         """
+    return html
+   }
+    
+    def getDBlist(Servers, list) {
+        def listDB = []
+        list[Servers].each {
+            listDB.add(it)
+        }
+        return listDB
+    }
+   return htmlBuild() 
+}
+
+
+
+def listDB = getDB(list)
+jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
+            script: listDB]]]
 /*def getDB(String Servers, list) {
     list[$Servers].each {   
         listDB.add(it)
