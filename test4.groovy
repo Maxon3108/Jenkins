@@ -12,8 +12,7 @@ stages {
    }
  }
 def list = ["\"Selecet:selected\"": "\"Not Applicable\"", "\"Server1\"": ["\"DB1_1\"","\"DB1_2\""], "\"Server2\"": ["\"DB2_1\"", "\"DB2_2\"", "\"DB2_3\""]]
-def jobParameters = []
-def listDB = []    
+def jobParameters = []   
 List listServer = []
     list.each {   
         listServer.add(it.key)
@@ -85,7 +84,7 @@ def htmlBuild(list) {
         return listDB
     }
 
-String listDB = getDB(list)
+def listDB = getDB(list)
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
             script: listDB]]])
 /*def getDB(String Servers, list) {
