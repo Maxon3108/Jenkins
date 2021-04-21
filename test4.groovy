@@ -85,7 +85,7 @@ def htmlBuild(list) {
     }
 
 def listDB = getDB(list)
-jobParameters.add([$class: 'ChoiceParameterDefinition', choiceType: 'FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
+jobParameters.add([$class: 'DynamicReferenceParameter', choiceType: 'ET_FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
             script: listDB]]])
 /*def getDB(String Servers, list) {
     list[$Servers].each {   
