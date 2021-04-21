@@ -79,8 +79,8 @@ def htmlBuild(Servers, list) {
         }
         return listDB
     }
-    return htmlBuild()
-}
+    
+
 def listDB = htmlBuild(Servers, list) 
        
 jobParameters.add([$class: 'DynamicReferenceParameter', choiceType: 'ET_FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
