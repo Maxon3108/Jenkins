@@ -78,7 +78,7 @@ def htmlBuild(list) {
     
     def getDBlist(Servers, list) {
         def listDB = []
-        list[Servers].each {
+        list["\"${Servers}\""].each {
             listDB.add(it)
         }
         return listDB
