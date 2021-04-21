@@ -85,7 +85,7 @@ def htmlBuild(list) {
         return listDB
     }
 
-def listDB = getDB(list)
+String listDB = getDB(list)
 jobParameters.add([$class: 'CascadeChoiceParameter', choiceType: 'FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
             script: listDB]]])
 /*def getDB(String Servers, list) {
