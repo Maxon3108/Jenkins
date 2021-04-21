@@ -34,7 +34,7 @@ jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   
 
 def getDB(list) {
     
-   return htmlBuild() 
+   return htmlBuild(list) 
 }
 
 def htmlBuild(list) {
