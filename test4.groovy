@@ -34,12 +34,10 @@ jobParameters.add([$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   
 
 def getDB(list) {
     
-   return htmlBuild(list) 
-}
-
-def htmlBuild(list) {
+   return """
+        def htmlBuild(list) {
     def l1 = list
-    html = """
+    html = \"""
             <html>
             <head>
             <meta charset="windows-1251">
@@ -57,23 +55,23 @@ def htmlBuild(list) {
             </style>
             </head>
             <body>
-        """
+       \"""
         def dbOptions = ""
     getDBlist(Servers, l1).each {
         dbOptions += "<option style='font-style: italic' value='DB=${it}'>${it}</option>"
     }
-    html += """<p style="display: inline-block;">
+    html += \"""<p style="display: inline-block;">
         <select id="commit_id" size="1" name="value">
             ${dbOptions}
-        </select></p></div>"""
+        </select></p></div>\"""
 
-    html += """
+    html += \"""
             </div>
             </div>
             </div>
             </body>
             </html>
-         """
+         \"""
     return html
    }
     
@@ -84,8 +82,16 @@ def htmlBuild(list) {
         }
         return listDB
     }
+    return htmlBuild()
+}
+    
+   """ 
+}
 
-def listDB = getDB(list)
+
+
+def listDB = getDB(list) 
+       
 jobParameters.add([$class: 'DynamicReferenceParameter', choiceType: 'ET_FORMATTED_HTML',name: 'DB', referencedParameters: 'Servers', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: true, script: 'return ["error"]'], script: [classpath: [], sandbox: true, 
             script: listDB]]])
 /*def getDB(String Servers, list) {
